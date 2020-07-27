@@ -284,6 +284,100 @@
 
 ## Data flow
 
+<details>
+  <summary>Describe the "one-way data flow".</summary>
+  <br/>
 
+  1. State describes the condition fo the app at a point in time, and UI renders based on that state.
+  2. When something happens in the app, the state is updated based on what occurred:
+      1. The UI dispatches an action.
+      2. The store runs the reducers, and the state is updated based on what occurred.
+      3. The store notifies the UI that the state has changed.
+  3. The UI re-renders based on the new state.
 
+  ![Redux one-way data flow](https://redux.js.org/img/tutorials/essentials/one-way-data-flow.png)
+
+</details>
+<details>
+  <summary>What are the two main steps in a Redux app data flow?</summary>
+  <br/>
+
+  1. Initial setup.
+  2. Updates.
+
+</details>
+<details>
+  <summary>Describe the Redux initial setup.</summary>
+  <br/>
+
+  1. A Redux store is created using a root reducer function.
+  2. The store call the root reducer once, and saves the return value as its initial `state`.
+  3. When the UI is first rendered, UI components access the current state of the Redux store, and use that data to decide what to render. They also subscribe to any future store updates so they can know if the state has changed.
+
+</details>
+<details>
+  <summary>Describe the Redux updates step.</summary>
+  <br/>
+
+  1. Something happens in the app, such as a user clicking a button.
+  2. The app code dispatches an action to the Redux store, like `dispatch({type: 'counter/increment'})`.
+  3. The store runs the reducer function again with the previous `state` and the current `action`, and saves the returned value as the new `state`.
+  4. The store notifies all parts of the UI that are subscribed that the store has been updated.
+  5. Each UI component that needs data from the store checks to see if the parts of the state they need have changed.
+  6. Each component that sees its data has changed forces a re-render with the new data, so it can update what's shown on the screen.
+  
+  ![Redux updates](https://redux.js.org/img/tutorials/essentials/ReduxDataFlowDiagram.gif)
+
+</details>
+<details>
+  <summary>How can we read data from the store inside a component?</summary>
+  <br/>
+
+  With the `useSelector` hook from the React-Redux library.
+  The 'selector functions' that you write will be called with the entire Redux `state` object as a parameter, and should return the specific data that this component needs from the store.
+
+</details>
+<details>
+  <summary>How does React know when to update data?</summary>
+  <br/>
+
+  Selectors will re-run whenever the Redux store is updated, and if the data they return has changed, the component will re-render.
+
+</details>
+
+## Thunks
+
+<details>
+  <summary>What are thunks in Redux?</summary>
+  <br/>
+
+  They are an specific kind of Redux function that can contain asynchronous logic.
+
+</details>
+<details>
+  <summary>How are thunks written?</summary>
+  <br/>
+
+  1. An inside thunk function, which gets `dispatch` and `getState` as arguments.
+  2. The outside creator function, which creates and returns the thunk function.
+
+</details>
+<details>
+  <summary>How are thunks useful?</summary>
+  <br/>
+
+  A component should not care whether we are dispatching a normal action or starting some async logic.
+
+</details>
+<details>
+  <summary>What's the typical pattern for data fetching logic that Redux follows?</summary>
+  <br/>
+
+  1. A "start" action is dispatch before the request, to indicate that the request is in progress. This may be used to track loading state to allow skipping duplicate requests or show loading indicators in the UI.
+  2. The async request is made.
+  3. Depending on the request result, the async logic dispatches either a "success" action containing the result data, or a "failure" action containing error details. The reducer logic clears the loading state in both cases, and either processes the result data from the success case, or stores the error value for potential display.
+  
+  These steps are not _required_, but are commonly used. If all you care about is a successful result, you can just dispatch a single "success" action when the request finishes, and skip "start" and "failure" actions.
+
+</details>
 
