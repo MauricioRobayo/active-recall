@@ -1,6 +1,6 @@
 {
 	"Details": {
-		"prefix": ["details"],
+		"prefix": ["?", "details"],
 		"body": [
 			"<details>",
 			"\t<summary>${1:Question goes here}</summary>",
