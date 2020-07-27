@@ -1,3 +1,3 @@
 # Redux
 
-- [Redux Essentials](redux-essentials.md)
+- [Redux Essentials](questions/redux-essentials.md)
