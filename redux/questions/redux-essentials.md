@@ -1,5 +1,14 @@
 # Redux
 
+- [x] https://redux.js.org/tutorials/essentials/part-1-overview-concepts
+- [x] https://redux.js.org/tutorials/essentials/part-2-app-structure
+- [x] https://redux.js.org/tutorials/essentials/part-3-data-flow
+- [x] https://redux.js.org/tutorials/essentials/part-4-using-data
+- [x] https://redux.js.org/tutorials/essentials/part-5-async-logic
+- [] https://redux.js.org/tutorials/essentials/part-6-performance-normalization
+
+---
+
 <details>
   <summary>What is Redux?</summary>
   <br/>
