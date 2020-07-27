@@ -4,6 +4,7 @@
 		"body": [
 			"<details>",
 			"\t<summary>${1:Question goes here}</summary>",
+			"\t<br/>",
 			"",
 			"\t${2:This is the hidden answer}",
 			"",
