@@ -2,11 +2,11 @@
 
 Learning one question at a time.
 
-- [JavaScript](javascript)
-- [React](react)
+- JavaScript
+- React
 - [Redux](redux)
-- [TypeScript](typescript)
-- [VSCode](vscode)
+- TypeScript
+- VSCode
 
 ## Contributing
 
