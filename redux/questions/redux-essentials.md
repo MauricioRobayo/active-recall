@@ -5,7 +5,7 @@
 - [x] https://redux.js.org/tutorials/essentials/part-3-data-flow
 - [x] https://redux.js.org/tutorials/essentials/part-4-using-data
 - [x] https://redux.js.org/tutorials/essentials/part-5-async-logic
-- [] https://redux.js.org/tutorials/essentials/part-6-performance-normalization
+- [ ] https://redux.js.org/tutorials/essentials/part-6-performance-normalization
 
 ---
 
