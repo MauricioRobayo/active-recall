@@ -1,10 +1,12 @@
 {
 	"Details": {
-		"prefix": ["dt", "details"],
+		"prefix": ["details"],
 		"body": [
 			"<details>",
 			"\t<summary>${1:Question goes here}</summary>",
+			"",
 			"\t${2:This is the hidden answer}",
+			"",
 			"</details>"
 		],
 		"description": "Details tag for a collapsible section."
