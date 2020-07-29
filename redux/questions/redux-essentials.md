@@ -204,6 +204,38 @@
   ```
 
 </details>
+<details>
+  <summary>What does `combineReducers` do?</summary>
+  <br/>
+
+  It generates a function that calls the reducers with the slices of state selected according to their keys, and combines their results into a single object again.
+
+  ```js
+  import { combineReducers } from 'redux'
+  import todos from './todos'
+  import visibilityFilter from './visibilityFilter'
+
+  export default combineReducers({
+    todos,
+    visibilityFilter
+  })
+  ```
+
+  It is basically a shortcut for something like this:
+
+  ```js
+  import todos from './todos'
+  import visibilityFilter from './visibilityFilter'
+
+  function todoApp(state = {}, action) {
+    return {
+      visibilityFilter: visibilityFilter(state.visibilityFilter, action),
+      todos: todos(state.todos, action)
+    }
+  }
+  ```
+
+</details>
 
 ## Store
 
