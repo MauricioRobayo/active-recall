@@ -247,6 +247,24 @@
 
 </details>
 <details>
+  <summary>What are the responsibilities of the Redux `store`?</summary>
+  <br/>
+
+  1. Hold application logic.
+  2. Allow access to state via `getState()`.
+  3. Allow state to be updated via `dispatch(action)`.
+  4. Register listeners via `subscribe(listener)`.
+  5. Handle unregistering of listeners via the function returned by `subscribe(listener)`.
+
+</details>
+<details>
+  <summary>How many stores should you have on an app?</summary>
+  <br/>
+
+  You'll only have a single store in a Redux application. When you want to split your date handling logic, you'll use [reducer composition](https://redux.js.org/basics/reducers#splitting-reducers).
+
+</details>
+<details>
   <summary>How do you create a store?</summary>
   <br/>
 
