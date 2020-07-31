@@ -67,7 +67,7 @@
 ## `createReducer`
 
 <details>
-  <summary>What are the two main benefit of `createReducer`?</summary>
+  <summary>What are the two main benefits of `createReducer`?</summary>
   <br/>
 
   1. Simplifies creating Redux reducer functions, by defining them as lookup tables of functions to handle each action type.
@@ -135,6 +135,54 @@
   <br/>
 
   `createReducer` uses the [immer](https://github.com/mweststrate/immer) library to let you write reducers as if they were mutating the state directly. In reality, the reducer receives a proxy state that translates all mutations into equivalent copy operations.
+
+</details>
+<details>
+  <summary>What's the main consideration while using `immer` in `createReducer`?</summary>
+  <br/>
+
+  You need to ensure that you either mutate the `state` argument or return a new state, but not both.
+
+  For example, this is fine as this returns a new argument:
+
+  ```js
+  const visibilityFilter = createReducer(VisibilityFilters.SHOW_ALL, {
+    [setVisibilityFilter]: (state, action) => action.payload 
+  })
+  ```
+
+  But this is not fine, as this mutates the state **and** returns a new state (be careful with the use of arrow functions):
+
+  ```js
+  const todos = createReducer([], {
+    [addTodo]: (state, action) => state.push({
+        id: action.payload.id,
+        text: action.payload.text,
+        completed: false
+      }),
+    [toggleTodo]: (state, action) => state[action.payload].completed = !state[action.payload].completed
+  })
+  ```
+
+  To fix this, either:
+  
+  - wrap the assignment in curly braces to make it a function body
+  - add the void operator in front of the assignment
+
+  ```js
+  const todos = createReducer([], {
+    // wrap the assignment in curly braces
+    [addTodo]: (state, action) => {
+      state.push({
+        id: action.payload.id,
+        text: action.payload.text,
+        completed: false
+      })
+    },
+    // use the void operator
+    [toggleTodo]: (state, action) => void(state[action.payload].completed = !state[action.payload].completed),
+  })
+  ```
 
 </details>
 
