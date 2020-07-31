@@ -189,6 +189,15 @@
 ## `createSlice`
 
 <details>
+  <summary>What's a `slice`?</summary>
+  <br/>
+
+  A normal Redux application has a JS object at the top of its state tree, and that object is the result of calling the Redux [`combineReducers` function](https://redux.js.org/api/combinereducers) to join multiple reducer functions into one large "root reducer".
+  
+  **We refer to one key/value section of that object as a "slice", and we use the term "[slice reducer](https://redux.js.org/recipes/structuring-reducers/splitting-reducer-logic)" to describe the reducer function responsible for updating that slice of the state**.
+
+</details>
+<details>
   <summary>What does `createSlice` returns?</summary>
   <br/>
 
