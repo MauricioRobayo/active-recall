@@ -128,7 +128,7 @@ https://react-redux.js.org/introduction/quick-start
 
 </details>
 <details>
-  <summary>What is the recommended way of using `mapDispatchToProps`?</summary>
+  <summary>Which is the recommended way of using `mapDispatchToProps`?</summary>
   <br/>
 
   The recommended way is using the "object shorthand":
