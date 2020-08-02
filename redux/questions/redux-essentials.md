@@ -236,6 +236,13 @@
   ```
 
 </details>
+<details>
+  <summary>Why can't we run asynchronous code inside a `reducer`?</summary>
+  <br/>
+
+  The Redux core (ie, `createStore`) is completely synchronous. When you call `store.dispatch()`, the store runs the root reducer, saves the return value, runs the subscriber callbacks, and returns, with no pause. By default, any asynchronicity has to happen outside of the store. 
+
+</details>
 
 ## Store
 
