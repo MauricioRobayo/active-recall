@@ -9,6 +9,23 @@
   Creates a Redux store instance like the original `createStore` from Redux, but accepts a named options object and sets up the Redux DevTools Extension automatically.
 
 </details>
+<details>
+  <summary>What are the main benefits of using `configureStore` over `createStore`?</summary>
+  <br/>
+
+  - Having an options object with "named" paramenters, which can be easier to read.
+  - Letting you provide arrays of middleware and enhancers you want to add to the store, and calling `applyMiddleware` and `compose` for you automatically.
+  - Enabling the Redux DevTools Extension automatically.
+
+</details>
+<details>
+  <summary>Which middleware is added by default with `configureStore`?</summary>
+  <br/>
+
+  - `redux-thunk` is the most commonly used middleware for working with both synchronous and async logic outside of components.
+  - In development, middleware that check for common mistakes like mutating the state or using non-serializable values.
+
+</details>
 
 ## `createAction`
 
@@ -57,10 +74,53 @@
 
 </details>
 <details>
-  <summary>Question goes here</summary>
+  <summary>What additional argument does `createAction` accepts?</summary>
   <br/>
 
-  This is the hidden answer
+  It also accepts a "prepare callback" argument, which allow you to customize the resulting `payload` field and optionally add a `meta` and/or `error` field.
+
+</details>
+<details>
+  <summary>What kind of information can the `meta` field contain?</summary>
+  <br/>
+
+  The optional `meta` property MAY be any type of value. It is intended for any extra information that is not part of the payload.
+
+</details>
+<details>
+  <summary>What kind of information can the `error` field contain?</summary>
+  <br/>
+
+  
+  The optional `error` property MAY be set to `true` if the actions represents an error.
+
+  An actions whose `error` property is true is analogous to a rejected Promise. By convention, the `payload` SHOULD be an error object.
+
+  If `error` has any other value besied `true`, including `undefined` and `null`, the action MUST NOT be interpreted as an error.
+
+</details>
+<details>
+  <summary>What specification does `createAction` follows for it's fields?</summary>
+  <br/>
+
+  The [Flux Standard Actions](https://github.com/redux-utilities/flux-standard-action#actions).
+
+</details>
+<details>
+  <summary>What are the two conditions an `action` MUST have according to the "Flux Standard Actions"?</summary>
+  <br/>
+
+    - be a plain JavaScript object.
+    - have a `type` property.
+
+</details>
+<details>
+  <summary>What are the three properties an `action` MAY have according to the "Flux Standard Actions"?</summary>
+  <br/>
+
+  - an `error` property.
+  - a `payload` property.
+  - a `meta` property.
 
 </details>
 
@@ -204,3 +264,11 @@
   Returns a "slice" object that contains the generated reducer function as a field named `reducer`, and the generated action creators inside an object called `actions`.
 
 </details>
+
+## `createAsyncThunk`
+
+https://redux-toolkit.js.org/usage/usage-guide#asynchronous-logic-and-data-fetching
+
+## `createEntityAdapter`
+
+https://redux-toolkit.js.org/usage/usage-guide#managing-normalized-data
