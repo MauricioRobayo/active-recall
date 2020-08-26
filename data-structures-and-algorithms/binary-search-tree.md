@@ -86,3 +86,38 @@
   Since in-order traversal returns the keys in ascending sorted order, if we reverse the in-order traversal, we get the results in descending order.
 
 </details>
+<details>
+  <summary>How can we do an iterative in-order traversal instead of a recursive one?</summary>
+  <br/>
+
+  By using a stack.
+
+</details>
+<details>
+  <summary>What's the time complexity of a recursive in-order traversal of a Binary Tree?</summary>
+  <br/>
+
+  `0(n)` because the recursive function is `T(n) = 2 * T(n/2) + 1`.
+
+</details>
+<details>
+  <summary>What's the space complexity of a recursive in-order traversal of a Binary Tree?</summary>
+  <br/>
+
+  The worst case space required is O(n), and in the average case it's O(log n) where n is number of node.
+
+</details>
+<details>
+  <summary>What's the time complexity of an iterative in-order traversal of a Binary Tree?</summary>
+  <br/>
+
+  `0(n)`.
+
+</details>
+<details>
+  <summary>What's the space complexity of an iterative in-order traversal of a Binary Tree?</summary>
+  <br/>
+
+  `0(n)`.
+
+</details>
