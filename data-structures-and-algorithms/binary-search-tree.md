@@ -65,3 +65,24 @@
   We can use a variation of Inorder traversal where Inorder traversal is reversed.
 
 </details>
+<details>
+  <summary>How are node ordered in a Binary Search Tree?</summary>
+  <br/>
+
+  In a Binary Search Tree each node is ordered such that the key is greater than all keys in its left subtree and less than all keys in its right subtree.
+
+</details>
+<details>
+  <summary>How is the result of in-order traversal sorted in a Binary Search Tree?</summary>
+  <br/>
+
+  In-order traversal returns the keys sorted in ascending order.
+
+</details>
+<details>
+  <summary>How is the result of reverse in-order traversal sorted in a Binary Search Tree?</summary>
+  <br/>
+
+  Since in-order traversal returns the keys in ascending sorted order, if we reverse the in-order traversal, we get the results in descending order.
+
+</details>
