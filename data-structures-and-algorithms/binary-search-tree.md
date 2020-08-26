@@ -37,9 +37,9 @@
   <summary>Which are the Depth First ways to traverse a Binary Search Tree (BST)?</summary>
   <br/>
 
-  1. Inorder
-  2. Preorder
-  3. Postorder
+  1. In-order
+  2. Pre-order
+  3. Post-order
 
 </details>
 <details>
@@ -50,19 +50,19 @@
 
 </details>
 <details>
-  <summary>Describe the algorithm for Inorder traversal of a Binary Search Tree (BST).</summary>
+  <summary>Describe the algorithm for In-order traversal of a Binary Search Tree (BST).</summary>
   <br/>
 
-  1. Traverse the left subtree, i.e., call Inorder(left-subtree).
-  2. Visit the root.
-  3. Traverse the right subtree, i.e., call Inorder(right-subtree).
+  1. Traverse the left subtree by recursively calling then in-order function.
+  2. Access the data part of the current node.
+  3. Traverse the right subtree by recursively calling the in-order function.
 
 </details>
 <details>
-  <summary>In case of Binary Search Tree (BST), Inorder traversal gives nodes in non-decreasing order. How can we get nodes in non-increasing order?</summary>
+  <summary>In case of Binary Search Tree (BST), In-order traversal gives nodes in non-decreasing order. How can we get nodes in non-increasing order?</summary>
   <br/>
 
-  We can use a variation of Inorder traversal where Inorder traversal is reversed.
+  We can use a variation of In-order traversal where In-order traversal is reversed.
 
 </details>
 <details>
