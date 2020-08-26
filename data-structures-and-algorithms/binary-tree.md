@@ -1,4 +1,4 @@
-# Binary Search Tree
+# Search Tree
 
 <details>
   <summary>What is a Binary Search Tree?</summary>
@@ -127,4 +127,15 @@
 
   `0(n)`.
 
+</details>
+<details>
+  <summary>What does the prefix of the type of traversal tells us?</summary>
+  <br/>
+
+  It tells us when we visit the node:
+
+  - **Pre**-order: We visit the node first.
+  - **In**-order: We visit the node in the middle.
+  - **Post**-order: We visit the node last.
+  
 </details>
