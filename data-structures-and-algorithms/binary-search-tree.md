@@ -50,6 +50,13 @@
 
 </details>
 <details>
+  <summary>Why is Breadth First search also called level order traversal?</summary>
+  <br/>
+
+  Because we visit every node on a level before going to a lower level. This search is referred to as _breadth-first search_ (BFS), as the search tree is broadened as much as possible on each depth before going to the next depth.
+
+</details>
+<details>
   <summary>Describe the algorithm for In-order traversal of a Binary Search Tree (BST).</summary>
   <br/>
 
