@@ -134,8 +134,8 @@
 
   It tells us when we visit the node:
 
-  - **Pre**-order: We visit the node first, previous to visiting left and right nodes.
-  - **In**-order: We visit the node in the middle, after we visit left, before we visit right.
-  - **Post**-order: We visit the node last, posterior to visiting left and right nodes.
+  - **Pre**-order (**n**lr): We visit the node first, previous to visiting left and right nodes.
+  - **In**-order (l**n**r): We visit the node in the middle, after we visit left, before we visit right.
+  - **Post**-order (lr**n**): We visit the node last, posterior to visiting left and right nodes.
   
 </details>
